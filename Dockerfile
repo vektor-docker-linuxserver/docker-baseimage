@@ -1,5 +1,9 @@
 FROM vektory79/i386-baseimage:0.9.19
+
+MAINTAINER Vektory79 <vektory79@gmail.com>
+
 ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
+
 COPY sources.list /etc/apt/sources.list
 COPY my_init/*.sh /etc/my_init.d/
 RUN useradd -u 911 -U -d /config -s /bin/false abc && \
