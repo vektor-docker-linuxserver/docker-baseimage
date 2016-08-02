@@ -2,7 +2,10 @@ FROM vektory79/i386-baseimage:0.9.19
 
 MAINTAINER Vektory79 <vektory79@gmail.com>
 
-ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm"
+ENV DEBIAN_FRONTEND="noninteractive" HOME="/root" TERM="xterm" LANG="ru_RU.UTF-8" LANGUAGE="ru" LC_ALL="ru_RU.UTF-8"
+
+# Set the locale
+RUN locale-gen ru_RU.UTF-8
 
 COPY sources.list /etc/apt/sources.list
 COPY my_init/*.sh /etc/my_init.d/
